@@ -42,7 +42,7 @@ flowchart TD
     N9(["STOP"])
     N8 --> N9
 
-##$. Pseudocode
+##4. Pseudocode
 
 START
 rates = USD:85, EUR:95, GBP:110
