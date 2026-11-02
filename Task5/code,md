@@ -1,6 +1,7 @@
 ##. Multi-Currency Travel Budget Analysis
 
-##5. Problem Statement
+##1. Problem Statement
+
 Convert travel expenses using supplied exchange rates, incorporate conversion fees, compare planned spending
 against a budget, and identify the largest expense category.
 Assumptions / Rules
