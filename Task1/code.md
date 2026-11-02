@@ -19,7 +19,7 @@ Develop a Python program to analyse a matrix of student marks across multiple su
 11. **Stop** the program.
 
 
-## 5. Sample Input
+## 3. Sample Input
 
 The program uses the following predefined data.
 
@@ -40,7 +40,7 @@ The program uses the following predefined data.
 
 *Note: This program uses predefined input, so you do not need to type the marks when running it.*
 
-## 6. Sample Output
+## 4. Sample Output
 
 ```text
 STUDENT MARKS MATRIX ANALYSIS
@@ -76,7 +76,7 @@ No low-performing subjects found.
 
 Python has an average of 78, Maths has 66.5, and Physics has 73.75. All three averages are above the threshold of 60 marks.
 
-## 7. Mermaid Flowchart Code
+## 5. Mermaid Flowchart Code
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
  ```mermaid
@@ -97,7 +97,7 @@ flowchart TD
 ```
 
 
-## 8. Conclusion
+## 6. Conclusion
 
 This program analyses student marks using a two-dimensional list (matrix) in Python. It calculates row-wise and column-wise statistics, identifies the student with the highest average, and detects subjects with average marks below 60. It demonstrates the use of lists, nested loops, conditional statements, the `sum()` function, and the `max()` function.
 
