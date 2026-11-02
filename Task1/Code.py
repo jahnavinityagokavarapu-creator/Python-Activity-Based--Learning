@@ -1,5 +1,3 @@
-```python
-
 students = ["Ravi", "Sita", "Kiran", "Priya"]
 
 subjects = ["Python", "Maths", "Physics"]
@@ -91,4 +89,4 @@ for j in range(m):
 
 if not found:
     print("No low-performing subjects found.")
-``` 
+
