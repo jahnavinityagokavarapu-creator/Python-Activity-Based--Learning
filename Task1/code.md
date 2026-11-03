@@ -79,8 +79,9 @@ Python has an average of 78, Maths has 66.5, and Physics has 73.75. All three av
 ## 5. Mermaid Flowchart Code
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
- ```mermaid
+```mermaid
 flowchart TD
+
     A([Start]) --> B[Initialize Student Names, Subject Names and Marks Matrix]
     B --> C[Calculate Row-wise Student Totals and Averages]
     C --> D[Find Highest Student Average]
