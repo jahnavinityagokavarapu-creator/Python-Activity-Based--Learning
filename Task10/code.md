@@ -19,7 +19,8 @@ days. Excess data costs n50 per GB. The total plan cost must fit the budget.
 7. Display the selected plan or report that no plan is eligible.
 8. Stop
 
-##3. Mermaid Flowchart Code
+##3. Mermaid Flowchart CodeCopy the following code into a Mermaid-compatible editor to generate a flowchart.
+```mermaid
 
 flowchart TD
     N0(["START"])
