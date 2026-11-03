@@ -1,9 +1,7 @@
 ## 1.Problem Statement
-
 Develop a Python program to compare multiple mobile recharge plans based on data usage, call minutes, SMS, validity, and budget constraints. The system calculates the total cost of each plan, including excess usage charges. It identifies plans that satisfy the user's requirements and selects the most economical eligible plan.
 
 ## 2. Algorithm
-
 1. Start the program.
 2. Enter the number of mobile plans.
 3. Enter the user's requirements:
@@ -98,7 +96,7 @@ Program Completed.
 ## 5. Mermaid Flowchart Code
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
- ```mermaid
+```mermaid
 
       
     flowchart TD
