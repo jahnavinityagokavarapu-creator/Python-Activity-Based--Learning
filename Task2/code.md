@@ -55,8 +55,8 @@ Program Completed.
 ## 5. Mermaid Flowchart Code
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
- mermaid
-mermaid   
+ ```mermaid
+   
     flowchart TD
     A([Start]) --> B[/Enter Number of Months/]
     B --> C[/Enter Month and Units/]
@@ -84,6 +84,8 @@ mermaid
     S --> U[Display All Bills]
     T --> U
     U --> V([Stop])
+```
 
 ## 8.Conclusion
+
 The Progressive Electricity Billing System calculates household electricity bills using different consumption slabs, fixed charges, surcharges, and rebates. It compares monthly bills and identifies unusual increases. This program reduces manual calculations and helps households monitor their electricity expenses.
