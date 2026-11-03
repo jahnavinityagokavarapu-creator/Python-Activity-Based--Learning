@@ -92,7 +92,7 @@ Copy the following code into a Mermaid-compatible editor to generate a flowchart
     O --> Q[Display Financial Report]
     P --> Q
     G --> R([Stop])
-    Q --> R
-```
+    Q --> R```
+
 ## 10. Conclusion
 The Campus Event Financial Planning System calculates all expenses required for organizing a college event. It determines participant contributions, sponsorship shortfalls, and the minimum number of registrations needed to break even. This Python program helps colleges manage event budgets, control expenses, and plan financial resources effectively.
