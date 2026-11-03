@@ -1,93 +1,129 @@
-##. Multi-Currency Travel Budget Analysis
+## 1.Problem Statement
 
-##1. Problem Statement
+Develop a Python program to compare multiple mobile recharge plans based on data usage, call minutes, SMS, validity, and budget constraints. The system calculates the total cost of each plan, including excess usage charges. It identifies plans that satisfy the user's requirements and selects the most economical eligible plan.
 
-Convert travel expenses using supplied exchange rates, incorporate conversion fees, compare planned spending
-against a budget, and identify the largest expense category.
-Assumptions / Rules
-Example exchange rates: USD n85, EUR n95, GBP n110. For simplicity, conversion fees are not included in this
-sample; rates are assumed values and should be updated for real use.
+## 2. Algorithm
 
-##2. Algorithm
+1. Start the program.
+2. Enter the number of mobile plans.
+3. Enter the user's requirements:
+   - Required data in GB.
+   - Required call minutes.
+   - Required SMS.
+   - Required validity in days.
+   - Maximum budget.
+4. Enter the details of each mobile plan:
+   - Plan name.
+   - Plan price.
+   - Included data.
+   - Included call minutes.
+   - Included SMS.
+   - Validity.
+5. Calculate excess data, call, and SMS usage.
+6. Calculate excess charges:
+   - Extra data: ₹10 per GB.
+   - Extra call: ₹1 per minute.
+   - Extra SMS: ₹0.50 per SMS.
+7. Calculate the total cost of each plan.
+8. Check whether the plan satisfies validity and budget requirements.
+9. Identify eligible plans.
+10. Select the plan with the lowest total cost.
+11. Display all plan costs and the most economical eligible plan.
+12. Stop the program.
 
-1. Start.
-2. Read travel budget in INR and number of expenses.
-3. For each expense, read category, currency, and amount.
-4. Find the supplied exchange rate and convert the amount into INR.
-5. Store each valid converted expense and add it to the total.
-6. Identify the largest expense category.
-7. Compare total expenses with the budget.
-8. Display total, largest category, and budget status; stop
+## 3.sample input
+Enter number of mobile plans: 3
 
-##3. Mermaid Flowchart Code
+Enter required data (GB): 3
+Enter required call minutes: 500
+Enter required SMS: 100
+Enter required validity (days): 28
+Enter maximum budget: 300
 
-flowchart TD
-    N0(["START"])
-    N1["Input INR budget and number of expenses"]
-    N0 --> N1
-    N2["Input category, currency, and amount"]
-    N1 --> N2
-    N3{"Is currency supported (USD/EUR/GBP)?"}
-    N2 --> N3
-    N4["Yes fi Convert to INR and store; No fi Report invalid currency"]
-    N3 -->|Yes / No as applicable| N4
-    N5["Repeat for all expenses"]
-    N4 --> N5
-    N6["Find largest expense category"]
-    N5 --> N6
-    N7{"Are total expenses greater than budget?"}
-    N6 --> N7
-    N8["Display budget status and expense summary"]
-    N7 -->|Yes / No as applicable| N8
-    N9(["STOP"])
-    N8 --> N9
+Enter Plan Details
+Enter plan name: Basic
+Enter plan price: 150
+Enter included data (GB): 2
+Enter included call minutes: 400
+Enter included SMS: 100
+Enter validity days: 28
 
-##4. Pseudocode
+Enter Plan Details
+Enter plan name: Smart
+Enter plan price: 220
+Enter included data (GB): 3
+Enter included call minutes: 500
+Enter included SMS: 100
+Enter validity days: 28
 
-START
-rates = USD:85, EUR:95, GBP:110
-INPUT budget, number_of_expenses
-expenses = empty list
-total = 0
-FOR each expense
-    INPUT category, currency, amount
-    IF currency exists in rates
-        converted = amount * rates[currency]
-        ADD (category, converted) TO expenses
-        total = total + converted
-    ELSE
-        DISPLAY "Invalid currency"
-    END IF
-END FOR
-IF expenses is not empty
-    FIND expense with maximum converted amount
-    IF total > budget
-        DISPLAY "Budget Exceeded"
-    ELSE
-        DISPLAY "Within Budget"
-    END IF
-    DISPLAY total and largest category
-ELSE
-    DISPLAY "No valid expenses"
-END IF
-STOP
+Enter Plan Details
+Enter plan name: Premium
+Enter plan price: 280
+Enter included data (GB): 5
+Enter included call minutes: 600
+Enter included SMS: 200
+Enter validity days: 56
 
-##5. Sample Input
+## 4.sample output
 
-Enter travel budget in INR: 30000
-Enter number of expenses: 3
-Hotel, USD, 100
-Food, EUR, 50
-Shopping, GBP, 100
+Plan: Basic
+Base Price: Rs. 150.0
+Extra Data Charge: Rs. 10.0
+Extra Call Charge: Rs. 100
+Extra SMS Charge: Rs. 0.0
+Total Cost: Rs. 260.0
 
-##6. Sample Output
-Travel Budget Report
-Total Expenses: 24000.0
-Largest Category: Shopping
-Largest Expense: 11000.0
-Within Budget
+Plan: Smart
+Base Price: Rs. 220.0
+Extra Data Charge: Rs. 0.0
+Extra Call Charge: Rs. 0
+Extra SMS Charge: Rs. 0.0
+Total Cost: Rs. 220.0
 
-##7. Conclusion
+Plan: Premium
+Base Price: Rs. 280.0
+Extra Data Charge: Rs. 0.0
+Extra Call Charge: Rs. 0
+Extra SMS Charge: Rs. 0.0
+Total Cost: Rs. 280.0
 
-The program converts expenses from supported currencies into Indian Rupees, totals the spending, compares it with
-the budget, and finds the largest expense category
+--- BEST MOBILE PLAN ---
+
+Selected Plan: Smart
+Total Cost: Rs. 220.0
+Eligible Plans: 3
+
+Program Completed.
+
+## 5. Mermaid Flowchart Code
+
+Copy the following code into a Mermaid-compatible editor to generate a flowchart.
+ ```mermaid
+
+      
+    flowchart TD
+    A([Start]) --> B[/Enter Number of Plans/]
+    B --> C[/Enter User Requirements/]
+    C --> D[/Enter Plan Details/]
+    D --> E[Calculate Excess Data]
+    E --> F[Calculate Excess Call Charges]
+    F --> G[Calculate Excess SMS Charges]
+    G --> H[Calculate Total Cost]
+    H --> I{Validity Sufficient?}
+    I -- No --> J[Reject Plan]
+    I -- Yes --> K{Cost Within Budget?}
+    K -- No --> J
+    K -- Yes --> L[Add to Eligible Plans]
+    J --> M{More Plans?}
+    L --> M
+    M -- Yes --> D
+    M -- No --> N{Eligible Plans Available?}
+    N -- No --> O[Display No Eligible Plans]
+    N -- Yes --> P[Find Minimum Cost Plan]
+    P --> Q[Display Best Mobile Plan]
+    O --> R([Stop])
+    Q --> R
+```
+
+ ## 6. Conclusion
+The Multi-Plan Telecommunications Cost Optimization System compares different mobile recharge plans based on data, calls, SMS, validity, and budget. It calculates additional usage charges and identifies the most economical eligible plan. This Python program helps users select suitable mobile plans while reducing unnecessary expenses.
