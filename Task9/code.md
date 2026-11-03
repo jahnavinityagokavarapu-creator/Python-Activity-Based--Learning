@@ -80,12 +80,12 @@ Explanation of Results
 - Vijayawada: Average = (35 + 40 + 45 + 40) / 4 = 40.0, so the classification is Safe.
 - Guntur: Average = (60 + 65 + 70 + 65) / 4 = 65.0, so the classification is Moderate.
 - Visakhapatnam: Average = (90 + 95 + 100 + 95) / 4 = 95.0, so the classification is Critical.
-- 
-##5. Mermaid Flowchart Code
+- ## 5. Mermaid Flowchart Code
 
-Copy this code into the Mermaid Live Editor to generate a visual flowchart.
-
+Copy the following code into a Mermaid-compatible editor to generate a flowchart.
+```mermaid
 flowchart TD
+
 
     A([Start]) --> B[/Enter number of locations/]
     B --> C[/Enter location names and readings/]
@@ -102,7 +102,9 @@ flowchart TD
     K --> L{More locations to process?}
     L -- Yes --> E
     L -- No --> M([Stop])
+```
 
 
-##5.Conclusion: 
+##6.Conclusion: 
+
 This program uses nested lists and basic Python functions to analyze environmental readings, calculate statistical values, and classify monitoring locations according to user-defined thresholds.
