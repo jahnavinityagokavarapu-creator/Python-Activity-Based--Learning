@@ -19,10 +19,12 @@ penalty is 10% of the calculated ticket amount.
 6. Add reservation fee if fare is payable.
 7. If cancelled, calculate 10% cancellation penalty; otherwise show ticket fare.
 8. Repeat for all passengers and stop
-   
-   ##3. Mermaid Flowchart Code
-   
+  ## 5. Mermaid Flowchart Code
+
+Copy the following code into a Mermaid-compatible editor to generate a flowchart.
+```mermaid
 flowchart TD
+
     N0(["START"])
     N1["Input passenger count and passenger details"]
     N0 --> N1
@@ -42,6 +44,7 @@ flowchart TD
     N7 --> N8
     N9(["STOP"])
     N8 --> N9
+```
     
 ##4. Pseudocode
 
