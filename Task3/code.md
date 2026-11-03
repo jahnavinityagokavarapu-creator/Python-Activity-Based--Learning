@@ -1,93 +1,104 @@
-##Case Study: Employee Payroll and Deduction Analysis
+## 1. Problem Statement
+Develop a Python program to calculate employee salaries based on basic pay, allowances, overtime, and incentives. The system calculates gross salary, applies progressive deductions according to salary slabs, and determines the final net salary. Finally, it generates a formatted salary statement for each employee.
 
-##1. Problem Statement
-
-Develop a Python program to calculate an employee's gross salary using basic pay, allowances, overtime payments, and incentives. Apply progressive deductions based on the gross salary and generate a formatted salary statement showing the employee's earnings, total deductions, and net salary.
- 
- ##2. Algorithm
+## 2. Algorithm
 1. Start the program.
-2. Input the employee's name and basic salary.
-3. Input allowances, overtime hours, overtime rate per hour, and incentives.
-4. Calculate the total allowances.
-5. Calculate the overtime payment.
-6. Calculate the gross salary.
-7. Apply progressive deductions using the following example rates:
-   - First ₹10,000: 0% deduction.
-   - Next ₹10,000: 5% deduction.
-   - Remaining amount above ₹20,000: 10% deduction.
-8. Calculate the total deductions.
-9. Calculate the net salary by subtracting deductions from gross salary.
-10. Display the formatted salary statement.
-11. Stop the program.
-    
-##3. Sample Input
+2. Enter the number of employees.
+3. Enter employee name and ID.
+4. Enter basic salary, allowances, overtime hours, overtime rate, and incentives.
+5. Calculate overtime pay by multiplying overtime hours by overtime rate.
+6. Calculate gross salary by adding basic salary, allowances, overtime pay, and incentives.
+7. Apply progressive deductions:
+   - Gross salary up to ₹20,000: No deduction.
+   - ₹20,001 to ₹40,000: 5% deduction.
+   - Above ₹40,000: 10% deduction.
+8. Calculate the deduction amount.
+9. Calculate net salary by subtracting deductions from gross salary.
+10. Generate and display the salary statement.
+11. Repeat for all employees.
+12. Stop the program.
 
-Enter employee name: Ravi
+## 3.sample input
+input
+Enter number of employees: 2
+
+Enter Employee Details
+Enter employee name: Harika
+Enter employee ID: E101
 Enter basic salary: 25000
-Enter total allowances: 5000
+Enter allowances: 5000
 Enter overtime hours: 10
-Enter overtime rate per hour: 200
+Enter overtime rate: 200
 Enter incentives: 2000
 
-##4. Sample Output
+Enter Employee Details
+Enter employee name: Priya
+Enter employee ID: E102
+Enter basic salary: 15000
+Enter allowances: 3000
+Enter overtime hours: 5
+Enter overtime rate: 100
+Enter incentives: 1000
 
-========== SALARY STATEMENT ==========
-Employee Name       : Ravi
-Basic Salary        : Rs. 25000.0
-Allowances           : Rs. 5000.0
-Overtime Pay         : Rs. 2000.0
-Incentives           : Rs. 2000.0
---------------------------------------
-Gross Salary         : Rs. 34000.0
-Total Deductions     : Rs. 1900.0
-Net Salary           : Rs. 32100.0
-======================================
+## 4. sample output
 
-Calculation
-Step 1: Calculate overtime pay
+------ SALARY STATEMENT ------
 
-Overtime Pay = 10 × ₹200 = ₹2,000
+Employee Name: Harika
+Employee ID: E101
+Basic Salary: Rs. 25000.0
+Allowances: Rs. 5000.0
+Overtime Pay: Rs. 2000.0
+Incentives: Rs. 2000.0
+Gross Salary: Rs. 34000.0
+Deduction: Rs. 1700.0
+Net Salary: Rs. 32300.0
 
-Step 2: Calculate gross salary
+------------------------------
 
-Gross Salary = ₹25,000 + ₹5,000 + ₹2,000 + ₹2,000
+------ SALARY STATEMENT ------
 
-Gross Salary = ₹34,000
+Employee Name: Priya
+Employee ID: E102
+Basic Salary: Rs. 15000.0
+Allowances: Rs. 3000.0
+Overtime Pay: Rs. 500.0
+Incentives: Rs. 1000.0
+Gross Salary: Rs. 19500.0
+Deduction: Rs. 0.0
+Net Salary: Rs. 19500.0
 
-Step 3: Calculate progressive deductions
-- First ₹10,000: ₹0 deduction
-- Next ₹10,000: ₹10,000 × 5% = ₹500
-- Remaining ₹14,000: ₹14,000 × 10% = ₹1,400
-Total Deductions = ₹500 + ₹1,400 = ₹1,900
+------------------------------
 
-Step 4: Calculate net salary
+Payroll Processing Completed.
 
-Net Salary = ₹34,000 − ₹1,900 = ₹32,100
+## 5. Mermaid Flowchart Code
 
+Copy the following code into a Mermaid-compatible editor to generate a flowchart.
+ mermaid
+ ```mermaid
 
-##5. Mermaid Flowchart Code
-Copy this code into a Mermaid-compatible editor to generate the flowchart.
+    flowchart TD
+    A([Start]) --> B[/Enter Number of Employees/]
+    B --> C[/Enter Employee Details/]
+    C --> D[/Enter Basic Pay, Allowances, Overtime and Incentives/]
+    D --> E{Are Inputs Valid?}
+    E -- No --> F[Display Invalid Details]
+    E -- Yes --> G[Calculate Overtime Pay]
+    G --> H[Calculate Gross Salary]
+    H --> I{Gross <= 20000?}
+    I -- Yes --> J[No Deduction]
+    I -- No --> K{Gross <= 40000?}
+    K -- Yes --> L[Apply 5% Deduction]
+    K -- No --> M[Apply 10% Deduction]
+    J --> N[Calculate Net Salary]
+    L --> N
+    M --> N
+    N --> O[Generate Salary Statement]
+    F --> P{More Employees?}
+    O --> P
+    P -- Yes --> C
+    P -- No --> Q([Stop])
 
-flowchart TD
-
-    A([Start]) --> B[/Input employee details/]
-    B --> C[Calculate overtime pay]
-    C --> D[Calculate gross salary]
-    D --> E{Gross salary <= 10000?}
-
-    E -- Yes --> F[Deduction = 0]
-    E -- No --> G{Gross salary <= 20000?}
-
-    G -- Yes --> H[Deduction = 5% of amount above 10000]
-    G -- No --> I[Deduction = 500 + 10% of amount above 20000]
-
-    F --> J[Calculate net salary]
-    H --> J
-    I --> J
-
-    J --> K[/Display formatted salary statement/]
-    K --> L([Stop])
-    
-##6. Conclusion
-
-The Employee Payroll and Deduction Analysis program calculates gross salary from basic pay, allowances, overtime payments, and incentives. It applies progressive deductions and calculates the final net salary. The program demonstrates Python variables, arithmetic operators, conditional statements, and formatted output.
+## 6.Conclusion
+The Employee Payroll and Deduction Analysis System calculates gross salary and net salary using basic pay, allowances, overtime, and incentives. It applies progressive deductions and generates a formatted salary statement. This Python program reduces manual calculations and makes employee payroll processing easier and more accurate.
