@@ -20,10 +20,14 @@ over the previous bill is unusual.
 7. From the second month onward, compare the bill with the previous month's bill.
 8. If the increase is greater than 50%, report an unusual increase.
 9. Stop
-10. 
+   
 3.## Mermaid Flowchart Code
 
-flowchart TD
+
+copy the following code into a Mermaid-compatible editor to generate a flowchart.
+mermaid
+```mermaid
+   flowchart TD
 
     N0(["START"])
     N1["Input number of months and monthly units"]
