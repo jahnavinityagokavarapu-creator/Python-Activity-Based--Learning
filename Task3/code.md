@@ -75,10 +75,8 @@ Payroll Processing Completed.
 ## 5. Mermaid Flowchart Code
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
- mermaid
- ```mermaid
-
-    flowchart TD
+```mermaid
+flowchart TD
     A([Start]) --> B[/Enter Number of Employees/]
     B --> C[/Enter Employee Details/]
     C --> D[/Enter Basic Pay, Allowances, Overtime and Incentives/]
