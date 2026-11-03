@@ -55,8 +55,7 @@ Program Completed.
 ## 5. Mermaid Flowchart Code
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
- mermaid
-```mermaid   
+ mermaid 
     flowchart TD
     A([Start]) --> B[/Enter Number of Months/]
     B --> C[/Enter Month and Units/]
