@@ -1,3 +1,4 @@
+
 ## 1. Problem Statement
 Develop a Python program to calculate hospital bills based on consultation charges, diagnostic charges, and treatment charges. The system applies conditional concessions, validates billing constraints, calculates the final bill, and classifies patients according to their payment amount. It helps hospitals prepare accurate bills and manage patient payment categories.
 
