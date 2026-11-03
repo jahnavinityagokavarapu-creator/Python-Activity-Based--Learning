@@ -56,6 +56,7 @@ Program Completed.
 
 Copy the following code into a Mermaid-compatible editor to generate a flowchart.
  mermaid 
+ ```mermaid
     flowchart TD
     A([Start]) --> B[/Enter Number of Months/]
     B --> C[/Enter Month and Units/]
