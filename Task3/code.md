@@ -1,4 +1,3 @@
-
 ## 1. Problem Statement
 Develop a Python program to calculate hospital bills based on consultation charges, diagnostic charges, and treatment charges. The system applies conditional concessions, validates billing constraints, calculates the final bill, and classifies patients according to their payment amount. It helps hospitals prepare accurate bills and manage patient payment categories.
 
@@ -96,5 +95,6 @@ Copy the following code into a Mermaid-compatible editor to generate a flowchart
     G -- Yes --> C
     G -- No --> S([Stop])
 ```
+
 ### 6. Conclusion
 The Hospital Billing and Patient Classification System calculates patient bills accurately using consultation, diagnostic, and treatment charges. It applies concessions, validates charges, and classifies patients according to payment categories. This system reduces manual work and improves hospital billing management.
