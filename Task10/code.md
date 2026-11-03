@@ -1,82 +1,126 @@
-##5. Multi-Plan Telecommunications Cost Optimization
+## 1.Problem Statement
+Develop a Python program to compare multiple mobile recharge plans based on data usage, call minutes, SMS, validity, and budget constraints. The system calculates the total cost of each plan, including excess usage charges. It identifies plans that satisfy the user's requirements and selects the most economical eligible plan.
 
-##1. Problem Statement
+## 2. Algorithm
+1. Start the program.
+2. Enter the number of mobile plans.
+3. Enter the user's requirements:
+   - Required data in GB.
+   - Required call minutes.
+   - Required SMS.
+   - Required validity in days.
+   - Maximum budget.
+4. Enter the details of each mobile plan:
+   - Plan name.
+   - Plan price.
+   - Included data.
+   - Included call minutes.
+   - Included SMS.
+   - Validity.
+5. Calculate excess data, call, and SMS usage.
+6. Calculate excess charges:
+   - Extra data: ₹10 per GB.
+   - Extra call: ₹1 per minute.
+   - Extra SMS: ₹0.50 per SMS.
+7. Calculate the total cost of each plan.
+8. Check whether the plan satisfies validity and budget requirements.
+9. Identify eligible plans.
+10. Select the plan with the lowest total cost.
+11. Display all plan costs and the most economical eligible plan.
+12. Stop the program.
 
-Evaluate several mobile plans against data usage, validity, and budget constraints. Calculate excess data charges
-and identify the most economical eligible plan.
-Assumptions / Rules
-Example plans: Plan A n199 for 2 GB and 28 days; Plan B n299 for 3 GB and 28 days; Plan C n399 for 5 GB and 56
-days. Excess data costs n50 per GB. The total plan cost must fit the budget.
+## 3.sample input
+Enter number of mobile plans: 3
 
-##2. Algorithm
+Enter required data (GB): 3
+Enter required call minutes: 500
+Enter required SMS: 100
+Enter required validity (days): 28
+Enter maximum budget: 300
 
-1. Start.
-2. Read expected data usage, required validity, and budget.
-3. Store the available plans with price, data limit, and validity.
-4. For each plan, check whether validity is sufficient.
-5. Calculate excess data cost and total cost.
-6. Keep the cheapest plan whose total cost is within budget.
-7. Display the selected plan or report that no plan is eligible.
-8. Stop
+Enter Plan Details
+Enter plan name: Basic
+Enter plan price: 150
+Enter included data (GB): 2
+Enter included call minutes: 400
+Enter included SMS: 100
+Enter validity days: 28
 
-##3. Mermaid Flowchart CodeCopy the following code into a Mermaid-compatible editor to generate a flowchart.
-```mermaid
+Enter Plan Details
+Enter plan name: Smart
+Enter plan price: 220
+Enter included data (GB): 3
+Enter included call minutes: 500
+Enter included SMS: 100
+Enter validity days: 28
 
-flowchart TD
-    N0(["START"])
-    N1["Input data usage, required validity, and budget"]
-    N0 --> N1
-    N2["Load the three mobile plans"]
-    N1 --> N2
-    N3["Check each plan's validity"]
-    N2 --> N3
-    N4["Calculate excess data charge and total cost"]
-    N3 --> N4
-    N5{"Is total cost within budget?"}
-    N4 --> N5
-    N6["Yes fi Compare with cheapest eligible plan; No fi Skip plan"]
-Page 11
-Python Activity-Based Learning | Case Studies 1–10
-    N5 -->|Yes / No as applicable| N6
-    N7["After all plans, display cheapest eligible plan or no match"]
-    N6 --> N7
-    N8(["STOP"])
-    N7 --> N8
-    
-##4. Pseudocode
+Enter Plan Details
+Enter plan name: Premium
+Enter plan price: 280
+Enter included data (GB): 5
+Enter included call minutes: 600
+Enter included SMS: 200
+Enter validity days: 56
 
-START
-INPUT usage_GB, required_days, budget
-plans = [(A,199,2,28), (B,299,3,28), (C,399,5,56)]
-best_plan = NONE
-best_cost = infinity
-FOR each plan
-    IF plan.validity >= required_days
-        extra_GB = MAX(0, usage_GB - plan.data_limit)
-        total_cost = plan.price + extra_GB * 50
-        IF total_cost <= budget AND total_cost < best_cost
-            best_plan = plan.name
-            best_cost = total_cost
-        END IF
-    END IF
-END FOR
-IF best_plan exists
-    DISPLAY best_plan, best_cost
-ELSE
-    DISPLAY "No eligible plan"
-END IF
-STOP
-    
-##5. Sample Input
+## 4.sample output
 
-Enter data usage in GB: 2.5
-Enter required validity: 28
-Enter budget: 400
+Plan: Basic
+Base Price: Rs. 150.0
+Extra Data Charge: Rs. 10.0
+Extra Call Charge: Rs. 100
+Extra SMS Charge: Rs. 0.0
+Total Cost: Rs. 260.0
 
-##6. Sample Output
-Best Plan: Plan A
-Total Cost: Rs. 224.0
+Plan: Smart
+Base Price: Rs. 220.0
+Extra Data Charge: Rs. 0.0
+Extra Call Charge: Rs. 0
+Extra SMS Charge: Rs. 0.0
+Total Cost: Rs. 220.0
 
-##7. Conclusion
-The program compares mobile plans using usage, validity, and budget. It calculates excess data charges and selects
-the lowest-cost eligible plan.
+Plan: Premium
+Base Price: Rs. 280.0
+Extra Data Charge: Rs. 0.0
+Extra Call Charge: Rs. 0
+Extra SMS Charge: Rs. 0.0
+Total Cost: Rs. 280.0
+
+--- BEST MOBILE PLAN ---
+
+Selected Plan: Smart
+Total Cost: Rs. 220.0
+Eligible Plans: 3
+
+Program Completed.
+
+## 5. Mermaid Flowchart Code
+
+Copy the following code into a Mermaid-compatible editor to generate a flowchart.
+ mermaid
+mermaid
+      
+    flowchart TD
+    A([Start]) --> B[/Enter Number of Plans/]
+    B --> C[/Enter User Requirements/]
+    C --> D[/Enter Plan Details/]
+    D --> E[Calculate Excess Data]
+    E --> F[Calculate Excess Call Charges]
+    F --> G[Calculate Excess SMS Charges]
+    G --> H[Calculate Total Cost]
+    H --> I{Validity Sufficient?}
+    I -- No --> J[Reject Plan]
+    I -- Yes --> K{Cost Within Budget?}
+    K -- No --> J
+    K -- Yes --> L[Add to Eligible Plans]
+    J --> M{More Plans?}
+    L --> M
+    M -- Yes --> D
+    M -- No --> N{Eligible Plans Available?}
+    N -- No --> O[Display No Eligible Plans]
+    N -- Yes --> P[Find Minimum Cost Plan]
+    P --> Q[Display Best Mobile Plan]
+    O --> R([Stop])
+    Q --> R
+
+ ## 6. Conclusion
+The Multi-Plan Telecommunications Cost Optimization System compares different mobile recharge plans based on data, calls, SMS, validity, and budget. It calculates additional usage charges and identifies the most economical eligible plan. This Python program helps users select suitable mobile plans while reducing unnecessary expenses.
